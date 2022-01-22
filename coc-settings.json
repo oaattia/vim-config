@@ -9,7 +9,7 @@
     "diagnostic.infoSign": "•",
     "diagnostic.hintSign": "•",
     "diagnostic-languageserver.filetypes": {
-        "php": ["phpstan", "phpcs"]
+        "php": ["phpcs"]
     },
     "diagnostic-languageserver.mergeConfig": true,
     "diagnostic-languageserver.linters": {
