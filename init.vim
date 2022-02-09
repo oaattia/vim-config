@@ -25,7 +25,7 @@ set tabstop=4
 set hidden
 set signcolumn=yes:2
 set cmdheight=1
-set linespace=10
+set linespace=20
 set textwidth=80
 set splitbelow
 set splitright
