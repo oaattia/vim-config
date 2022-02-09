@@ -90,13 +90,12 @@ source ~/.config/nvim/plugins/commentary.vim
 source ~/.config/nvim/plugins/vim-test.vim
 source ~/.config/nvim/plugins/vim-dispatcher.vim
 source ~/.config/nvim/plugins/nerd-tree.vim
-" source ~/.config/nvim/plugins/autosave.vim "autosave plugin
 source ~/.config/nvim/plugins/airline.vim "statusbar in the bottom
+" source ~/.config/nvim/plugins/autosave.vim "autosave plugin
 call plug#end()
 
 "--------------------------------------------------------------------------
 " Post-plugin settings
 "--------------------------------------------------------------------------
-
 set background=dark
 colorscheme PaperColor
