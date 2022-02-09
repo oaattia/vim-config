@@ -39,15 +39,12 @@ let mapleader = "\<space>"
 nmap <leader>cf :edit ~/.config/nvim/init.vim<cr>
 nmap <leader>kc :edit ~/.config/kitty/kitty.conf<cr>
 nmap <leader>cs :source ~/.config/nvim/init.vim<cr>
+nmap <leader>coc :edit ~/.config/nvim/coc-settings.json<cr>
 
-" todo: check that line
 nmap <leader>k :nohlsearch<CR>
 
 " close all buffers
 nmap <leader>Q :bufdo bdelete<cr>
-
-" golang run go from command line
-" nnoremap <C-r> :!go run .<cr>
 
 map gf :edit <cfile><cr>
 
