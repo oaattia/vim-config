@@ -1,46 +1,38 @@
-set number
-set termguicolors
-set undofile
-set spell
-set title
-set ignorecase
-set smartcase
-set wildmode=longest:full,full
+set guioptions-=T " Removes top toolbar
+set guioptions-=r " Removes right hand scroll bar
+set go-=L " Removes left hand scroll bar
+set linespace=15
+set showmode                    " always show what mode we're currently editing in
 set wrap
-set list
-set listchars=tab:▸\ ,trail:·
+set tabstop=4                   " a tab is four spaces
+set smarttab
+set tags=tags
+set softtabstop=4               " when hitting <BS>, pretend like a tab is removed, even if spaces
+set expandtab                   " expand tabs by default (overloadable per file type later)
+set shiftwidth=4                " number of spaces to use for autoindenting
+set shiftround                  " use multiple of shiftwidth when indenting with '<' and '>'
+set backspace=indent,eol,start  " allow backspacing over everything in insert mode
+set autoindent                  " always set autoindenting on
+set copyindent                  " copy the previous indentation on autoindenting
+set number                      " always show line numbers
+set ignorecase                  " ignore case when searching
+set smartcase                   " ignore case if search pattern is all lowercase,
+set timeout timeoutlen=200 ttimeoutlen=100
+set visualbell           " don't beep
+set noerrorbells         " don't beep
+set autowrite  "Save on buffer switch
 set mouse=a
-set scrolloff=8
-set sidescrolloff=8
-set nojoinspaces
-set clipboard=unnamedplus
-set confirm
-set exrc
-set backup
-" may be need first to create this directory
-set backupdir=~/.local/share/nvim/backup
-set expandtab
-set shiftwidth=4
-set tabstop=4
-set hidden
-set signcolumn=yes:2
-set cmdheight=1
-set linespace=20
-set textwidth=80
-set splitbelow
-set splitright
+set clipboard+=unnamedplus " the copy goes to the clipboard
 
 "--------------------------------------------------------------------------
 " General key maps (keymaps, key binds, keybinds)
 "--------------------------------------------------------------------------
-
 let mapleader = "\<space>"
 
 nmap <leader>cf :edit ~/.config/nvim/init.vim<cr>
-nmap <leader>kc :edit ~/.config/kitty/kitty.conf<cr>
 nmap <leader>cs :source ~/.config/nvim/init.vim<cr>
 nmap <leader>coc :edit ~/.config/nvim/coc-settings.json<cr>
-
+nmap <leader>ki :edit ~/.config/kitty/kitty.conf<cr>
 nmap <leader>k :nohlsearch<CR>
 
 " close all buffers
@@ -69,6 +61,25 @@ imap jj <esc>
 imap ;; <Esc>A;<Esc>
 imap ,, <Esc>A,<Esc>
 
+" Git
+nnoremap <leader>gb :G blame<cr>
+nnoremap <leader>gbr :Gbranches<cr>
+
+" arrow keys resize windows
+nnoremap <left> :vertical resize -10<cr>
+nnoremap <right> :vertical resize +10<cr>
+nnoremap <up> :resize -10<cr>
+nnoremap <down> :resize +10<cr>
+
+" Disable anoying ex mode
+nnoremap Q <Nop>
+
+" Disable the direction keys in insert mode
+imap <up> <nop>
+imap <down> <nop>
+imap <left> <nop>
+imap <right> <nop>
+
 "--------------------------------------------------------------------------
 " Plugins
 "--------------------------------------------------------------------------
@@ -81,21 +92,23 @@ if empty(glob('~/.local/share/nvim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.local/share/nvim/plugins')
-source ~/.config/nvim/plugins/fzf.vim
-source ~/.config/nvim/plugins/fugitive.vim
-source ~/.config/nvim/plugins/coc.vim
-source ~/.config/nvim/plugins/phpactor.vim
-source ~/.config/nvim/plugins/papercolor-theme.vim
-source ~/.config/nvim/plugins/commentary.vim
-source ~/.config/nvim/plugins/vim-test.vim
-source ~/.config/nvim/plugins/vim-dispatcher.vim
-source ~/.config/nvim/plugins/nerd-tree.vim
-source ~/.config/nvim/plugins/airline.vim "statusbar in the bottom
-" source ~/.config/nvim/plugins/autosave.vim "autosave plugin
+    source ~/.config/nvim/plugins/fzf.vim
+    source ~/.config/nvim/plugins/fugitive.vim
+    source ~/.config/nvim/plugins/coc.vim
+    source ~/.config/nvim/plugins/phpactor.vim
+    source ~/.config/nvim/plugins/papercolor-theme.vim
+    source ~/.config/nvim/plugins/everblush.vim
+    source ~/.config/nvim/plugins/commentary.vim
+    source ~/.config/nvim/plugins/vim-test.vim
+    source ~/.config/nvim/plugins/vim-dispatcher.vim
+    source ~/.config/nvim/plugins/vimspector.vim
+    source ~/.config/nvim/plugins/nerd-tree.vim
+    source ~/.config/nvim/plugins/airline.vim
 call plug#end()
 
 "--------------------------------------------------------------------------
 " Post-plugin settings
 "--------------------------------------------------------------------------
-set background=dark
-colorscheme PaperColor
+colorscheme everblush
+
+

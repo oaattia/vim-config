@@ -1,0 +1,2 @@
+Plug 'mangeshrex/everblush.vim'
+
